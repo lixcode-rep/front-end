@@ -14,6 +14,7 @@ const BottomTabBar = ({ activeTab, onTabPress }) => {
   const tabs = [
     { id: 'dashboard', icon: require('../assets/clock.png'), label: 'Dashboard' },
     { id: 'energy', icon: require('../assets/lightning.png'), label: 'Energy' },
+    { id: 'calculator', icon: require('../assets/calculator.png'), label: 'Calculator' },
     { id: 'profile', icon: require('../assets/human_icon.png'), label: 'Profile' },
   ];
 
