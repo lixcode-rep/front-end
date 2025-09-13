@@ -10,7 +10,6 @@ import Header from '../components/main-page-header';
 import DailyTipCard from '../components/daily-tip-card';
 import AchievementCard from '../components/achievement-card';
 import StatsGrid from '../components/stats-grid';
-import TariffButton from '../components/tariff-button';
 import PropertiesSection from '../components/properties-section';
 import BottomTabBar from '../components/bottom-tab-bar';
 
@@ -58,10 +57,6 @@ const EnergyDashboard = () => {
     console.log('History pressed');
   };
 
-  const handleTariffPress = () => {
-    console.log('Tariff switch pressed');
-  };
-
   const handleAddProperty = () => {
     console.log('Add property pressed');
   };
@@ -95,8 +90,6 @@ const EnergyDashboard = () => {
     stats={statsData}
     onHistoryPress={handleHistoryPress}
     />
-
-    <TariffButton onPress={handleTariffPress} />
 
     <PropertiesSection
     properties={propertiesData}
