@@ -37,7 +37,7 @@ export const BarChart = ({data}: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 100,
+    paddingVertical: 10,
     backgroundColor: "#fff",
   },
   chart: {

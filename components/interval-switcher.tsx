@@ -7,13 +7,14 @@ const msInDay = 1000 * 60 * 60 * 24;
 
 interface Props {
     interval: Interval;
-    onUpdate(date: Date, interval: number): void;
+    onUpdate(date: Date, interval: number, intervalType: Interval): void;
 }
 
 export const IntervalSwitcher = ({onUpdate, interval}: Props) => {
     const [dateAndInterval, setDateAndInterval] = useState<[Date, number]>([new Date, 0]);
     const [date, numericInterval] = dateAndInterval;
     const canGoNext = date.getTime() + numericInterval <= Date.now();
+    const intervalType = interval;
 
     useEffect(() => {
         update(fixDateByInterval(date));
@@ -35,7 +36,7 @@ export const IntervalSwitcher = ({onUpdate, interval}: Props) => {
     function update(date: Date) {
         const interval = calculateNumericInterva(date);
 
-        onUpdate?.(date, interval);
+        onUpdate?.(date, interval, intervalType);
         setDateAndInterval([date, interval]);
     }
 
