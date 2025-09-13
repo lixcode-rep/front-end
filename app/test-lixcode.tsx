@@ -1,13 +1,25 @@
 import { HorizontalSelect } from "../components/horizontal-select";
+import { IntervalSwitcher } from "../components/interval-switcher";
 
 export default function () {
-    return <HorizontalSelect
-    current="x"
-    setValue={() => void 0}
-    values={[
-        {id: "x", name: "Day"},
-        {id: "y", name: "Week"},
-        {id: "z", name: "Month"},
-    ]}
+    return <>
+    <IntervalSwitcher
+        interval="day"
+        onUpdate={(date, interval) => {
+            console.log(date, interval);
+        }}
     />
+    <IntervalSwitcher
+        interval="month"
+        onUpdate={(date, interval) => {
+            console.log(date, interval);
+        }}
+    />
+    <IntervalSwitcher
+        interval="year"
+        onUpdate={(date, interval) => {
+            console.log(date, interval);
+        }}
+    />
+    </>
 }
