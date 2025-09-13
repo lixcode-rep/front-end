@@ -21,24 +21,24 @@ const EnergyDashboard = () => {
       label: 'Current (A)',
       value: '6.2',
       change: '📈 3.5%',
-      backgroundColor: '#f3e5f5',
+      backgroundColor: '#f7cbff',
     },
     {
       label: 'Active power (kW)',
       value: '5.0',
       change: '⏱️ 5 Hr. Wk',
-      backgroundColor: '#e1bee7',
+      backgroundColor: '#c2b4ff',
     },
     {
       label: 'Voltage (V)',
       value: '220',
-      backgroundColor: '#fff9c4',
+      backgroundColor: '#edff77',
     },
     {
       label: 'Projected monthly gain (eur)',
       value: '125',
       change: '📈 2.25%',
-      backgroundColor: '#ffcc80',
+      backgroundColor: '#efb762',
     },
   ];
 
