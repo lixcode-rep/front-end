@@ -1,4 +1,5 @@
-import React from 'react';
+import { useRouter } from 'expo-router';
+import React, { ReactNode } from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 
 const TabItem = ({ icon, label, isActive, onPress }) => (
@@ -10,12 +11,41 @@ const TabItem = ({ icon, label, isActive, onPress }) => (
   </Pressable>
 );
 
-const BottomTabBar = ({ activeTab, onTabPress }) => {
-  const tabs = [
-    { id: 'dashboard', icon: require('../assets/clock.png'), label: 'Dashboard' },
-    { id: 'energy', icon: require('../assets/lightning.png'), label: 'Energy' },
-    { id: 'calculator', icon: require('../assets/calculator.png'), label: 'Calculator' },
-    { id: 'profile', icon: require('../assets/human_icon.png'), label: 'Profile' },
+export type TabId = 'dashboard' | 'energy' | 'calculator' | 'profile';
+interface TabData {
+  id: TabId;
+  icon: any;
+  label: string;
+  url: string;
+}
+
+const BottomTabBar = ({ activeTab }: {activeTab: TabId}) => {
+  const router = useRouter();
+  const tabs: TabData[] = [
+    { 
+      id: 'dashboard', 
+      icon: require('../assets/clock.png'), 
+      label: 'Dashboard',
+      url: "/mainpage"
+     },
+    { 
+      id: 'energy', 
+      icon: require('../assets/lightning.png'), 
+      label: 'Energy',
+      url: "/energy"
+    },
+    { 
+      id: 'calculator', 
+      icon: require('../assets/calculator.png'), 
+      label: 'Calculator',
+      url: "/calculator"
+    },
+    { 
+      id: 'profile', 
+      icon: require('../assets/human_icon.png'), 
+      label: 'Profile',
+      url: "/profile"
+    },
   ];
 
   return (
@@ -26,7 +56,7 @@ const BottomTabBar = ({ activeTab, onTabPress }) => {
       icon={tab.icon}
       label={tab.label}
       isActive={activeTab === tab.id}
-      onPress={() => onTabPress(tab.id)}
+      onPress={() => router.navigate(tab.url)}
       />
     ))}
     </View>

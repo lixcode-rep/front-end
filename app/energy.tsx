@@ -6,6 +6,7 @@ import { ActivityIndicator } from "react-native";
 import { BarChart } from "../components/bar-chart";
 import { HorizontalSelect } from "../components/horizontal-select";
 import { boldFont, regularFont } from "../lib/fonts";
+import { PageFrame } from "../components/page-frame";
 
 interface Request {
     metterId: string;
@@ -77,7 +78,7 @@ export default function () {
         }
     }, [result]);
 
-    return <View>
+    return <PageFrame active="energy">
         <Text style={styles.headerText}>Consumption history</Text>
         <Text>
             <Text style={styles.sumText}>{sum}</Text>
@@ -100,7 +101,7 @@ export default function () {
         <IntervalSwitcher interval={interval} onUpdate={(date, _, interval) => {
             update(date, interval);
         }} />
-    </View>
+    </PageFrame>
 }
 
 const styles = StyleSheet.create({
