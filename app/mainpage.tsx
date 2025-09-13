@@ -12,6 +12,7 @@ import AchievementCard from '../components/achievement-card';
 import StatsGrid from '../components/stats-grid';
 import PropertiesSection from '../components/properties-section';
 import BottomTabBar from '../components/bottom-tab-bar';
+import PropertiesSectionHeader from '../components/properties-section-header';
 
 const EnergyDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -43,6 +44,14 @@ const EnergyDashboard = () => {
   ];
 
   const propertiesData = [
+    {
+      name: 'Appartment 1',
+      type: 'App',
+      production: '1 - 19 560 W/month',
+      price: '1 299.99 lei/kW',
+      guests: '1 - 19',
+      dates: ['2022-05-09', '0.4', '2022'],
+    },
     {
       name: 'Appartment 1',
       type: 'App',
@@ -91,10 +100,23 @@ const EnergyDashboard = () => {
     onHistoryPress={handleHistoryPress}
     />
 
-    <PropertiesSection
-    properties={propertiesData}
-    onAddPress={handleAddProperty}
-    />
+    <PropertiesSectionHeader />
+
+    <ScrollView
+    style={styles.appartmentContent}
+    horizontal                     // enable left-right scroll
+    showsHorizontalScrollIndicator={false}
+    contentContainerStyle={{ flexDirection: 'row', paddingRight: 20 }}
+    >
+    {propertiesData.map((property, index) => (
+      <PropertiesSection
+      key={index}
+      properties={[property]}     // pass each property as an array
+      onAddPress={handleAddProperty}
+      style={{ marginRight: 15 }} // spacing between cards
+      />
+    ))}
+    </ScrollView>
 
     <View style={styles.bottomSpacing} />
     </ScrollView>
@@ -119,6 +141,10 @@ const styles = StyleSheet.create({
   bottomSpacing: {
     height: 100,
   },
+  appartmentContent: {
+    flex: 0,
+    paddingVertical: 20,
+  }
 });
 
 export default EnergyDashboard;
