@@ -3,7 +3,7 @@ import {
   Platform,
   StatusBar,
   Alert,
-  TouchableOpacity,
+  Pressable,
   View,
   StyleSheet,
   Text,
@@ -38,13 +38,13 @@ export default function LoginScreen() {
     secure
     />
 
-    <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+    <Pressable style={styles.loginButton} onPress={handleLogin}>
     <Text style={styles.loginButtonText}>Login</Text>
-    </TouchableOpacity>
+    </Pressable>
 
-    <TouchableOpacity onPress={() => console.log("Forgot password")}>
+    <Pressable onPress={() => console.log("Forgot password")}>
     <Text style={styles.forgotPassword}>Forgot your password?</Text>
-    </TouchableOpacity>
+    </Pressable>
 
     <SocialLogin onSocialPress={(p) => console.log(`${p} login`)} />
     </View>

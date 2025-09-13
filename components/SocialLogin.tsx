@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
+import { View, Pressable, StyleSheet, Text } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function SocialLogin({ onSocialPress }) {
@@ -7,26 +7,26 @@ export default function SocialLogin({ onSocialPress }) {
     <View style={styles.socialLogin}>
     <Text style={styles.orText}>or login with</Text>
     <View style={styles.socialButtons}>
-    <TouchableOpacity
+    <Pressable
     style={styles.socialButton}
     onPress={() => onSocialPress("Google")}
     >
     <Icon name="google" size={20} color="#db4437" />
-    </TouchableOpacity>
+    </Pressable>
 
-    <TouchableOpacity
+    <Pressable
     style={styles.socialButton}
     onPress={() => onSocialPress("Facebook")}
     >
     <Icon name="facebook" size={20} color="#4267B2" />
-    </TouchableOpacity>
+    </Pressable>
 
-    <TouchableOpacity
+    <Pressable
     style={styles.socialButton}
     onPress={() => onSocialPress("Apple")}
     >
     <Icon name="apple" size={20} color="#000000" />
-    </TouchableOpacity>
+    </Pressable>
     </View>
     </View>
   );

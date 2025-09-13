@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 
 export default function LoginHeader({ onSignUp }) {
   return (
@@ -7,9 +7,9 @@ export default function LoginHeader({ onSignUp }) {
     <Text style={styles.title}>Login</Text>
     <View style={styles.signUpContainer}>
     <Text style={styles.signUpText}>Don't have an account?</Text>
-    <TouchableOpacity onPress={onSignUp}>
+    <Pressable onPress={onSignUp}>
     <Text style={styles.signUpLink}> Sign up</Text>
-    </TouchableOpacity>
+    </Pressable>
     </View>
     </View>
   );
