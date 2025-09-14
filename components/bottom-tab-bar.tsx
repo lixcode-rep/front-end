@@ -11,7 +11,7 @@ const TabItem = ({ icon, label, isActive, onPress }) => (
   </Pressable>
 );
 
-export type TabId = 'dashboard' | 'energy' | 'calculator' | 'profile';
+export type TabId = 'dashboard' | 'energy' | 'calculator' | 'profile' | 'prediction';
 interface TabData {
   id: TabId;
   icon: any;
@@ -33,6 +33,12 @@ const BottomTabBar = ({ activeTab }: {activeTab: TabId}) => {
       icon: require('../assets/lightning.png'), 
       label: 'Energy',
       url: "/energy"
+    },
+    {
+      id: 'prediction',
+      icon: require('../assets/line-axis.png'),
+      label: 'Prediction',
+      url: "/prediction"
     },
     { 
       id: 'calculator', 
