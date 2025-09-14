@@ -1,0 +1,11 @@
+import React, { useState } from 'react';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
+
+export function Page () {
+  <Text> yes </Text>
+}

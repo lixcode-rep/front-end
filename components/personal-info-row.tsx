@@ -39,7 +39,7 @@ const PersonalInfoRow = ({ title, data }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    padding: 16,
+    // Remove the padding: 16 here
   },
   title: {
     fontSize: 18,
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f9fa',
     borderRadius: 8,
     paddingHorizontal: 16,
+    marginBottom: 8, // Add margin to match button spacing
   },
   row: {
     flexDirection: 'row',
@@ -80,43 +81,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
-
-// Example usage:
-/*
-const ExampleUsage = () => {
-  const personalData = [
-    {
-      label: 'Account number',
-      values: '6745 1147 6895 4125',
-    },
-    {
-      label: 'Username',
-      values: 'Daniel',
-    },
-    {
-      label: 'Email',
-      values: 'andr150895@gmail.com',
-    },
-    {
-      label: 'Mobile phone',
-      values: '+68 95 83 95',
-    },
-    {
-      label: 'Addresses',
-      values: [
-        'Strada Mihai Eminescu 45, Chișinău, Moldova, MD-2012',
-        'Strada Ștefan cel Mare 102, Bălți, Moldova, MD-3100'
-      ],
-    },
-  ];
-
-  return (
-    <PersonalInfoRow
-    title="Personal information"
-    data={personalData}
-    />
-  );
-};
-*/
 
 export default PersonalInfoRow;
