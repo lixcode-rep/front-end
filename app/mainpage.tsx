@@ -132,7 +132,7 @@ const EnergyDashboard = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: 'white',
   },
   content: {
     flex: 1,

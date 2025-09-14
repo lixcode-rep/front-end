@@ -29,7 +29,6 @@ export default function Page() {
 
   return (
     <View style={styles.container}>
-    {/* Scrollable content */}
     <ScrollView contentContainerStyle={styles.content}>
     <ProfileComponent />
     <PersonalInfoRow title="Personal information" data={personalData} />
@@ -43,9 +42,11 @@ export default function Page() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // take full screen
+    flex: 1,
+    backgroundColor: 'white',
   },
   content: {
+    backgroundColor: 'white',
     paddingBottom: 100, // make space so content doesn’t overlap with tab bar
   },
 });
