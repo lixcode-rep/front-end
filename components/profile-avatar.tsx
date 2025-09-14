@@ -56,9 +56,9 @@ const ProfileComponent = () => {
     <View style={styles.profileSection}>
     <View style={styles.imageContainer}>
     <Image
-    source={{
-      uri: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face'
-    }}
+    source={
+      require('../assets/man.png')
+    }
     style={styles.profileImage}
     />
     <Pressable
@@ -80,7 +80,7 @@ const ProfileComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: 'white',
   },
   header: {
     flexDirection: 'row',
