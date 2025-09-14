@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRouter } from 'expo-router';
+
 import {
   Platform,
   StatusBar,
@@ -13,7 +15,16 @@ import LoginHeader from "../components/LoginHeader";
 import Input from "../components/Input";
 import SocialLogin from "../components/SocialLogin";
 
+export type TabId = 'municipalities | districts';
+
+const handleTabPress = (tabId) => {
+  setActiveTab(tabId);
+  console.log(`Tab ${tabId} pressed`);
+};
+
 export default function LoginScreen() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +34,13 @@ export default function LoginScreen() {
       return;
     }
     console.log("Login pressed", { email, password });
+    if (email === 'provider' && password === '123') {
+      router.push('./distr-page')
+    }
+
+    if (email === 'daniel' && password === '123') {
+      router.push('./mainpage')
+    }
   };
 
   return (
