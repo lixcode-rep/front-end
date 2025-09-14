@@ -86,9 +86,10 @@ function dateToYearString(date: Date) {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
+        alignSelf: "stretch",
         flexDirection: "row",
         alignItems: "center",
+        padding: 10,
     },
     center: {
         flex: 1,

@@ -15,6 +15,7 @@ export function PageFrame ({active, children}: Props) {
     }}>
         <ScrollView style={{width: "100%", flex: 1}}>
             {children}
+            <View style={{height: 10}}/>
         </ScrollView>
         <BottomTabBar activeTab={active}/>
     </View>

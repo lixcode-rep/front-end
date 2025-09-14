@@ -8,16 +8,21 @@ interface Props<T> {
 }
 
 export function HorizontalSelect<T extends string>({current, values, setValue}: Props<T>) {
-    return <View style={styles.container}>
-        {values.map(item => <Pressable 
-            key={item.id} 
-            style={[styles.item, item.id === current && styles.activeItem]} 
-            disabled={item.id === current}
-            onPress={() => {
-                setValue(item.id);
-            }}>
-            <Text style={[styles.itemText, item.id === current && styles.activeItemText]}>{item.name}</Text>
-        </Pressable>)}
+    return <View style={{
+        alignSelf: "stretch",
+        padding: 10,
+    }}>
+        <View style={styles.container}>
+            {values.map(item => <Pressable
+              key={item.id}
+              style={[styles.item, item.id === current && styles.activeItem]}
+              disabled={item.id === current}
+              onPress={() => {
+                  setValue(item.id);
+              }}>
+                <Text style={[styles.itemText, item.id === current && styles.activeItemText]}>{item.name}</Text>
+            </Pressable>)}
+        </View>
     </View>
 }
 
@@ -27,7 +32,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 42,
         backgroundColor: "#F8F8F8",
-        margin: 10,
+        alignItems: "center",
+        borderRadius: 21,
     },
     item: {
         flex: 1,
